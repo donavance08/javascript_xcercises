@@ -16,22 +16,38 @@ const everydayPack = new Backpack(
   "December 5, 2018 15:00:00 PST"
 );
 
-const content = `
-  <main>
-    <article>
-      <h1>${everydayPack.name}</h1>
-      <ul>
-        <li>Volume: ${everydayPack.volume}</li>
-        <li>Color: ${everydayPack.color}</li>
-        <li>Age: ${everydayPack.backpackAge()}</li>
-        <li>Number of pockets: ${everydayPack.pocketNum}</li>
-        <li>Left strap length: ${everydayPack.strapLength.left}</li>
-        <li>Right strap length: ${everydayPack.strapLength.right}</li>
-        <li>Lid status: ${everydayPack.lidOpen}</li>
-      </ul>
-    </article>
-  </main>
-`;
+// Traditional way of modifying the DOM using String literals which is very tedious process
+const content =
+  "<main>" +
+  "<article>" +
+  "<h1>" +
+  everydayPack.name +
+  "</h1>" +
+  "<ul>" +
+  "<li>Volume: " +
+  everydayPack.volume +
+  "</li>" +
+  "<li>Color: " +
+  everydayPack.color +
+  "</li>" +
+  "<li>Age: " +
+  everydayPack.backpackAge() +
+  "</li>" +
+  "<li>Number of pockets: " +
+  everydayPack.pocketNum +
+  "</li>" +
+  "<li>Left strap length: " +
+  everydayPack.strapLength.left +
+  "</li>" +
+  "<li>Right strap length: " +
+  everydayPack.strapLength.right +
+  "</li>" +
+  "<li>Lid status: " +
+  everydayPack.lidOpen +
+  "</li>" +
+  "</ul>" +
+  "</article>" +
+  "</main>";
 
 document.body.innerHTML = content;
 

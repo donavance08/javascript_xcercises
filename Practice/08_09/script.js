@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Practice: Pass values between functions
  *
@@ -23,6 +24,8 @@ const frogpack = {
     right: 10,
   },
   lidOpen: false,
+  description:
+    "A green kids backpack designed to make the lid look like the face of a frog sticking out its tongue.",
   image: "../../assets/images/frog.svg",
   toggleLid: function (lidStatus) {
     this.lidOpen = lidStatus;
@@ -57,3 +60,23 @@ const content = `
       }</span></li>
     </ul>  
 `;
+
+const createArticle = () => {
+  const newArticle = document.createElement("article");
+  newArticle.innerHTML = content;
+  newArticle.prepend(createHelperImage());
+  return newArticle;
+};
+
+const createHelperImage = () => {
+  const newFigure = document.createElement("figure");
+  newFigure.innerHTML = `<img src=${frogpack.image}>`;
+  const caption = document.createElement("figcaption");
+  caption.innerHTML = frogpack.description;
+  caption.style.justifyContent = "center";
+  caption.style.display = "flex";
+  newFigure.append(caption);
+  return newFigure;
+};
+
+document.querySelector("main").append(createArticle());
