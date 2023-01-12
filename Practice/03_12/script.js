@@ -6,3 +6,10 @@
  * - Create several objects using the class.
  * - Test the objecs by calling their properties and using their methods in the console.
  */
+
+import Person from "./Person.js";
+
+const peter = new Person("Peter", 35);
+window.peter = peter;
+
+console.log("peter", peter);
